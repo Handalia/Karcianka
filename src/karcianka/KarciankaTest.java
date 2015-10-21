@@ -10,8 +10,14 @@ public class KarciankaTest extends TestCase {
   }
   
   // Czy stworzona karta ma właściwą wartość
-  public void testKolorIWartosc() {
+  public void testWartoscWlasciwa() {
     karcianka.Karta karta = new karcianka.Karta(Wartosc.DAMA, Kolor.TREFL);
     assertTrue("Karta ma złą wartość", karta.getWartosc() == Wartosc.DAMA);
+  }
+  
+  // Czy getWartosc zwraca to co konstruktor dostał
+  public void testWartosc() {
+    karcianka.Karta karta = new karcianka.Karta(Wartosc.KROL, Kolor.TREFL);
+    assertTrue("Karta ma złą wartość", karta.getWartosc() == Wartosc.KROL);
   }
 }
