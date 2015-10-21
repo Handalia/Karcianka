@@ -31,5 +31,9 @@ public class KarciankaTest extends TestCase {
     karcianka.Karta karta = new karcianka.Karta(Wartosc.KROL, Kolor.PIK);
     assertTrue("Karta nie zwraca prawidłowo konstruktora", karta.getKolor() == Kolor.PIK);
   }  
+  // Czy da się tworzyć obiekt stos kart
+  public void testObiektStosKart() {
+    new karcianka.StosKart();
+  }
 
 }
