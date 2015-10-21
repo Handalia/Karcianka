@@ -12,4 +12,8 @@ public class Karta {
   public Wartosc getWartosc() {
     return wartosc;
   }
+
+  public Kolor getKolor() {
+    return Kolor.TREFL;
+  }
 }

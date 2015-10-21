@@ -20,4 +20,11 @@ public class KarciankaTest extends TestCase {
     karcianka.Karta karta = new karcianka.Karta(Wartosc.KROL, Kolor.TREFL);
     assertTrue("Karta ma złą wartość", karta.getWartosc() == Wartosc.KROL);
   }
+
+  // Czy stworzona karta ma właściwy kolor
+  public void testKolorcWlasciwy() {
+    karcianka.Karta karta = new karcianka.Karta(Wartosc.DAMA, Kolor.TREFL);
+    assertTrue("Karta ma złą wartość", karta.getKolor() == Kolor.TREFL);
+  }
+
 }
