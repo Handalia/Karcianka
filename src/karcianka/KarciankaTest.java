@@ -42,4 +42,24 @@ public class KarciankaTest extends TestCase {
     karcianka.StosKart stos = new karcianka.StosKart();
     stos.dodajKarte(karta);
   }
+  
+  // Czy nie moge wziąć karty z pustego stosu
+  public void testPustyStos() {
+    try {
+      karcianka.StosKart stos = new karcianka.StosKart();
+      stos.wezKarte();
+      fail();
+    } catch (WyjatekPustegoStosu a) { }
+  }
+  // Czy karta dodana do stosu i wzięta ze stosu była tą samą kartą
+  public void testDodajIWez() {
+    karcianka.StosKart stos = new karcianka.StosKart();
+    karcianka.Karta karta = new karcianka.Karta(Wartosc.KROL, Kolor.TREFL);
+    stos.dodajKarte(karta);
+    try {
+      assertTrue("Karta nie jest tym samym co dodalam", stos.wezKarte() == karta);
+    } catch (WyjatekPustegoStosu e) {
+      fail();
+    }
+  }
 }
