@@ -119,4 +119,13 @@ public class KarciankaTest extends TestCase {
     } catch (WyjatekPustegoStosu w) { }
   }
 
+  // Próba przeniesienia karty z pustego stosu rzuca wyjątek
+  public void testPrzeniesKarteZPustego() {
+    StosKart stos1 = new StosKart();
+    StosKart stos2 = new StosKart();
+    try {
+      stos1.przeniesJednaKarteDo(stos2);
+      fail();
+    } catch (WyjatekPustegoStosu w) { }
+  }
 }
