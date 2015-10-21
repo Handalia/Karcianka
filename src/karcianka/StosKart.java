@@ -18,4 +18,7 @@ public class StosKart {
     return karty.remove(karty.size() - 1);
   }
 
+  public void potasuj() {
+  }
+
 }

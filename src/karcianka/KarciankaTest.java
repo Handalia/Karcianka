@@ -62,4 +62,14 @@ public class KarciankaTest extends TestCase {
       fail();
     }
   }
+  
+  // Czy można potasować stos kart?
+  public void testPotasujStosKart() {
+    karcianka.StosKart stos = new karcianka.StosKart();
+    stos.potasuj();
+    try {
+      stos.wezKarte();
+      fail();
+    } catch (WyjatekPustegoStosu w) { }
+  }
 }
