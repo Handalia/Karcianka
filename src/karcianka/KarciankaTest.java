@@ -88,5 +88,35 @@ public class KarciankaTest extends TestCase {
       stos.wezKarte();
       fail();
     } catch (WyjatekPustegoStosu w) { }
-  }  
+  }
+  
+  // Czy można potasować stos kart z dwiema kartami?
+  public void testPotasujStosKartZDwiemaKartami() {
+    karcianka.StosKart stos = new karcianka.StosKart();
+    Karta karta1 = new Karta(Wartosc.AS, Kolor.KARO);
+    Karta karta2 = new Karta(Wartosc.DAMA, Kolor.KIER);
+    stos.dodajKarte(karta1);
+    stos.dodajKarte(karta2);
+    stos.potasuj();
+    Karta zdjeta1;
+    Karta zdjeta2;
+    try {
+      zdjeta1 = stos.wezKarte();
+      assertTrue(zdjeta1 == karta1 || zdjeta1 == karta2);
+    } catch (WyjatekPustegoStosu w) {
+      fail();
+    }
+    try {
+      zdjeta2 = stos.wezKarte();
+      assertTrue(zdjeta2 == karta1 || zdjeta2 == karta2);
+    } catch (WyjatekPustegoStosu w) {
+      fail();
+    }
+    // assertTrue(zdjeta1 != zdjeta2);  // spytać jak to zrobić
+    try {
+      stos.wezKarte();
+      fail();
+    } catch (WyjatekPustegoStosu w) { }
+  }
+
 }

@@ -1,6 +1,7 @@
 package karcianka;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class StosKart {
 
@@ -19,6 +20,7 @@ public class StosKart {
   }
 
   public void potasuj() {
+    Collections.shuffle(karty);
   }
 
 }
