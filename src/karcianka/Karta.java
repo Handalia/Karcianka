@@ -7,4 +7,8 @@ public class Karta {
 
   karcianka.Wartosc wartosc;
   karcianka.Kolor kolor;
+  
+  public Wartosc getWartosc() {
+    return Wartosc.DAMA;
+  }
 }
