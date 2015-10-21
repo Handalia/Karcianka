@@ -36,4 +36,10 @@ public class KarciankaTest extends TestCase {
     new karcianka.StosKart();
   }
 
+  // Czy jest metoda do dodawania nowej karty
+  public void testDodajKarte() {
+    karcianka.Karta karta = new karcianka.Karta(Wartosc.KROL, Kolor.TREFL);
+    karcianka.StosKart stos = new karcianka.StosKart();
+    stos.dodajKarte(karta);
+  }
 }
