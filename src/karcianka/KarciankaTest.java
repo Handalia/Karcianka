@@ -72,4 +72,21 @@ public class KarciankaTest extends TestCase {
       fail();
     } catch (WyjatekPustegoStosu w) { }
   }
+  
+  // Czy można potasować stos kart z jedną kartą?
+  public void testPotasujStosKartZJednaKarta() {
+    karcianka.StosKart stos = new karcianka.StosKart();
+    Karta karta = new Karta(Wartosc.AS, Kolor.KARO);
+    stos.dodajKarte(karta);
+    stos.potasuj();
+    try {
+      assertEquals(karta, stos.wezKarte());
+    } catch (WyjatekPustegoStosu w) {
+      fail();
+    }
+    try {
+      stos.wezKarte();
+      fail();
+    } catch (WyjatekPustegoStosu w) { }
+  }  
 }
