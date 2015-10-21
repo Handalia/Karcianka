@@ -128,4 +128,30 @@ public class KarciankaTest extends TestCase {
       fail();
     } catch (WyjatekPustegoStosu w) { }
   }
+ 
+  // Czy można przenieść kartę z jednego stosu na drugi?
+  public void testPrzeniesKarteMiedzyStosami() {
+    StosKart stos1 = new StosKart();
+    StosKart stos2 = new StosKart();
+    Karta karta = new Karta(Wartosc.K3, Kolor.TREFL);
+    stos1.dodajKarte(karta);
+    try {
+      stos1.przeniesJednaKarteDo(stos2);
+    } catch (WyjatekPustegoStosu e) {
+      fail();
+    }
+    try {
+      stos1.wezKarte();
+      fail();
+    } catch (WyjatekPustegoStosu w) { }
+    try {
+      assertEquals(karta, stos2.wezKarte());
+    } catch (WyjatekPustegoStosu w) {
+      fail();
+    }
+    try {
+      stos2.wezKarte();
+      fail();
+    } catch (WyjatekPustegoStosu w) { }
+  }
 }

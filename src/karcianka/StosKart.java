@@ -24,7 +24,7 @@ public class StosKart {
   }
 
   public void przeniesJednaKarteDo(StosKart stos2) throws WyjatekPustegoStosu {
-    throw new WyjatekPustegoStosu("Brak możliwości wzięcia karty z pustego stosu");
+    stos2.dodajKarte(wezKarte());
   }
 
 }
