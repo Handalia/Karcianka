@@ -4,6 +4,7 @@ public class Karta {
 
   public Karta(final karcianka.Wartosc wartosc2, final karcianka.Kolor kolor2) {
     wartosc = wartosc2;
+    kolor = kolor2;
   }
 
   karcianka.Wartosc wartosc;
@@ -14,6 +15,6 @@ public class Karta {
   }
 
   public Kolor getKolor() {
-    return Kolor.TREFL;
+    return kolor;
   }
 }

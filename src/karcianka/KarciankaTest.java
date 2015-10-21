@@ -18,13 +18,18 @@ public class KarciankaTest extends TestCase {
   // Czy getWartosc zwraca to co konstruktor dostał
   public void testWartosc() {
     karcianka.Karta karta = new karcianka.Karta(Wartosc.KROL, Kolor.TREFL);
-    assertTrue("Karta ma złą wartość", karta.getWartosc() == Wartosc.KROL);
+    assertTrue("Karta nie zwraca prawidłowo konstruktora", karta.getWartosc() == Wartosc.KROL);
   }
 
   // Czy stworzona karta ma właściwy kolor
   public void testKolorcWlasciwy() {
     karcianka.Karta karta = new karcianka.Karta(Wartosc.DAMA, Kolor.TREFL);
-    assertTrue("Karta ma złą wartość", karta.getKolor() == Kolor.TREFL);
+    assertTrue("Karta ma zły kolor", karta.getKolor() == Kolor.TREFL);
   }
+  // Czy getKarta zwraca to co konstruktor dostał
+  public void testKolor() {
+    karcianka.Karta karta = new karcianka.Karta(Wartosc.KROL, Kolor.PIK);
+    assertTrue("Karta nie zwraca prawidłowo konstruktora", karta.getKolor() == Kolor.PIK);
+  }  
 
 }
